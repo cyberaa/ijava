@@ -39,108 +39,97 @@
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     RESERVED = 258,
-     COMMA = 259,
-     BOOL = 260,
-     INT = 261,
-     ID = 262,
-     INTLIT = 263,
-     IF = 264,
-     ELSE = 265,
-     WHILE = 266,
-     RETURN = 267,
-     PRINT = 268,
-     BOOLLIT = 269,
-     NEW = 270,
-     PARSEINT = 271,
-     PUBLIC = 272,
-     STATIC = 273,
-     VOID = 274,
-     CLASS = 275,
-     OCURV = 276,
-     CCURV = 277,
-     OBRACE = 278,
-     CBRACE = 279,
-     OSQUARE = 280,
-     CSQUARE = 281,
-     AND = 282,
-     OR = 283,
-     EQUALITY = 284,
-     RELATIONAL = 285,
-     ADITIVE = 286,
-     MULTIPLICATIVE = 287,
-     NOT = 288,
-     ASSIGN = 289,
-     SEMIC = 290,
-     STRING = 291,
-     DOTLENGTH = 292,
-     EXPR1REDUCE = 293,
-     UNARY = 294
+     INTLIT = 258,
+     BOOLLIT = 259,
+     INT = 260,
+     BOOL = 261,
+     NEW = 262,
+     IF = 263,
+     ELSE = 264,
+     WHILE = 265,
+     PRINT = 266,
+     PARSEINT = 267,
+     CLASS = 268,
+     PUBLIC = 269,
+     STATIC = 270,
+     VOID = 271,
+     STRING = 272,
+     DOTLENGTH = 273,
+     RETURN = 274,
+     OCURV = 275,
+     CCURV = 276,
+     OBRACE = 277,
+     CBRACE = 278,
+     OSQUARE = 279,
+     CSQUARE = 280,
+     OP1 = 281,
+     OP1OR = 282,
+     OP2 = 283,
+     OP2EQS = 284,
+     OP3 = 285,
+     OP4 = 286,
+     NOT = 287,
+     ASSIGN = 288,
+     SEMIC = 289,
+     COMMA = 290,
+     RESERVED = 291,
+     ID = 292,
+     IFX = 293
    };
 #endif
 /* Tokens.  */
-#define RESERVED 258
-#define COMMA 259
-#define BOOL 260
-#define INT 261
-#define ID 262
-#define INTLIT 263
-#define IF 264
-#define ELSE 265
-#define WHILE 266
-#define RETURN 267
-#define PRINT 268
-#define BOOLLIT 269
-#define NEW 270
-#define PARSEINT 271
-#define PUBLIC 272
-#define STATIC 273
-#define VOID 274
-#define CLASS 275
-#define OCURV 276
-#define CCURV 277
-#define OBRACE 278
-#define CBRACE 279
-#define OSQUARE 280
-#define CSQUARE 281
-#define AND 282
-#define OR 283
-#define EQUALITY 284
-#define RELATIONAL 285
-#define ADITIVE 286
-#define MULTIPLICATIVE 287
-#define NOT 288
-#define ASSIGN 289
-#define SEMIC 290
-#define STRING 291
-#define DOTLENGTH 292
-#define EXPR1REDUCE 293
-#define UNARY 294
+#define INTLIT 258
+#define BOOLLIT 259
+#define INT 260
+#define BOOL 261
+#define NEW 262
+#define IF 263
+#define ELSE 264
+#define WHILE 265
+#define PRINT 266
+#define PARSEINT 267
+#define CLASS 268
+#define PUBLIC 269
+#define STATIC 270
+#define VOID 271
+#define STRING 272
+#define DOTLENGTH 273
+#define RETURN 274
+#define OCURV 275
+#define CCURV 276
+#define OBRACE 277
+#define CBRACE 278
+#define OSQUARE 279
+#define CSQUARE 280
+#define OP1 281
+#define OP1OR 282
+#define OP2 283
+#define OP2EQS 284
+#define OP3 285
+#define OP4 286
+#define NOT 287
+#define ASSIGN 288
+#define SEMIC 289
+#define COMMA 290
+#define RESERVED 291
+#define ID 292
+#define IFX 293
 
 
 
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 29 "ijparser.y"
+#line 35 "ijcompiler.y"
 {
-	char *token;
-	Type type;
-	ExprType exprtype;
-	struct _class *class;
-	Decl_List *decllist;
-	VarDecl *vardecl;
-	Method_Decl *methoddecl;
-	Param_List *paramlist;
-	VarDecl_List *vardecllist;
-	ID_List *idlist;	
-	Stmt_List *stmtlist;
-	Stmt *stmt;	
-	Expr *expr;
-	Args_List *argslist;
+    char* token; 
+    int type; /* Type do tipo inteiro*/
+    struct _node* node; /* No da Arvore Sintaxe Abstracta */
+    struct _id_List* listId; /* Tipo de Method Type Decl */
+    
 }
 /* Line 1529 of yacc.c.  */
-#line 144 "y.tab.h"
+#line 133 "y.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

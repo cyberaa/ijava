@@ -1,0 +1,24 @@
+Compilling Commands
+
+- Meta 1
+lex ijscanner.l
+cc lex.yy.c -o ijscanner -ll
+./ijscanner < test.ijava
+
+- Meta 2
+
+lex ijparser.l
+yacc -d ijparser.y
+cc lex.yy.c structures.c y.tab.c gen.c display.c -o ijparser
+
+Abstract Syntax Tree
+./ijparser -t < test.ijava
+
+Symbolic Table
+./ijparser -s < test.ijava
+
+- Meta 3
+
+lex ijcompiler.l
+yacc -d ijcompiler.y
+cc display.c structures.c lex.yy.c  gen.c y.tab.c -o ijcompiler
