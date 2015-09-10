@@ -1,6 +1,13 @@
 # ijava
 Final Compiler Project from a subset of the Java language called imperative Java - Compilers Subject UC
 
+Description
+----------------
+This project consists in the development of a compiler for the language iJava (imperative Java), that is a small subset of the Programming Language Java (v 5.0). Every iJava program consists of only one class with the respective method (main). However this class may have other methods or attributes, every single one of them are static and public as well.
+
+This Project consists primarily on 3 phases. First we have created the Lexical Analysis using C and Lex; in the second phase, it has consisted on the creation of the Syntatic Analysis using yacc/bison to construct the Abstract Syntax Tree and consequently the Semantic Analysis with the construction of the Symbols Table and detection of Semantic Errors; in the third and final phase, we have generated the code in LLVM, resulting from this whole process.
+
+
 Screenshots
 ----------------
 
